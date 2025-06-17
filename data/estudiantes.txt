@@ -1,0 +1,16 @@
+Juan,Cruz,1234567,Informatica,202301,true,false
+Ana,Lopez,2233445,Informatica,202302,true,false
+Carlos,Reyes,3344556,Informatica,202303,true,false
+Maria,Perez,4455667,Informatica,202304,true,false
+Luis,Gomez,5566778,Informatica,202305,true,false
+Lucia,Flores,6677889,Informatica,202306,true,false
+Pedro,Martinez,7788990,Informatica,202307,true,false
+Andrea,Ramirez,8899001,Informatica,202308,true,false
+Sofia,Quispe,9900112,Informatica,202309,true,false
+Jorge,Mamani,1111222,Informatica,202310,true,false
+Miguel,Fernandez,2222333,Medicina,301112,true,false
+Laura,Salazar,3333444,Medicina,301113,false,false
+Diego,Vargas,4444555,Economia,401214,true,false
+Carla,Gutierrez,5555666,Economia,401215,false,false
+Elena,Rivera,6666777,Derecho,501316,true,false
+Fernando,Castro,7777888,Derecho,501317,false,false
