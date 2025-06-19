@@ -214,7 +214,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Los campos no deben estar vacios", "Error de login", JOptionPane.ERROR_MESSAGE);
         } else {
             if (admiService.login(usuario, password)) {
-                Dashboard dashboard = new Dashboard();
+                MainFrame dashboard = new MainFrame();
                 dashboard.setVisible(true);
                 dashboard.setLocationRelativeTo(null);
                 dispose();
