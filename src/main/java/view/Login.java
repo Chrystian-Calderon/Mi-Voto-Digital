@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
+import logic.AdministradorService;
 
 public class Login extends javax.swing.JFrame {
 
@@ -48,11 +50,10 @@ public class Login extends javax.swing.JFrame {
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/umsa.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bg_mivotodigital.jpg"))); // NOI18N
         background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 260));
 
         txtUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        txtUsuario.setText("Ingrese su usuario");
         txtUsuario.setBorder(null);
         txtUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -97,6 +98,9 @@ public class Login extends javax.swing.JFrame {
         btnLogin.setBorder(null);
         btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLoginMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnLoginMouseEntered(evt);
             }
@@ -137,7 +141,7 @@ public class Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 400, Short.MAX_VALUE))
+                .addGap(0, 403, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,21 +162,19 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioMouseClicked
 
     private void txtUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuarioFocusGained
-        if (txtUsuario.getText().equals("Ingrese su usuario")) {
-            txtUsuario.setText("");
+        if (txtUsuario.getText().isEmpty()) {
             txtUsuario.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_txtUsuarioFocusGained
 
     private void txtUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuarioFocusLost
         if (txtUsuario.getText().isEmpty()) {
-            txtUsuario.setText("Ingrese su usuario");
             txtUsuario.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_txtUsuarioFocusLost
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        btnLogin.requestFocus();
+        jLabel1.requestFocus();
     }//GEN-LAST:event_formWindowOpened
 
     private void txtPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusGained
@@ -202,6 +204,25 @@ public class Login extends javax.swing.JFrame {
         btnClose.setBackground(Color.WHITE);
         btnClose.setForeground(new Color(0, 150, 129));
     }//GEN-LAST:event_btnCloseMouseExited
+
+    private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
+        String usuario = txtUsuario.getText();
+        String password = String.valueOf(txtPassword.getPassword());
+        
+        AdministradorService admiService = new AdministradorService();
+        if (usuario.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Los campos no deben estar vacios", "Error de login", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (admiService.login(usuario, password)) {
+                Dashboard dashboard = new Dashboard();
+                dashboard.setVisible(true);
+                dashboard.setLocationRelativeTo(null);
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos", "Error de login", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnLoginMouseClicked
 
     /**
      * @param args the command line arguments
