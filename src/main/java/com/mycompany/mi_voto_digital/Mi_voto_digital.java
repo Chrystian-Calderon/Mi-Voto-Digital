@@ -1,15 +1,12 @@
-package logic;
+package com.mycompany.mi_voto_digital;
 
-import persistence.ArchivoEstudiante;
+
 import view.Login;
 
-public class Main {
+public class Mi_voto_digital {
     public static void main(String[] args) {
         Login login = new Login();
         login.setVisible(true);
         login.setLocationRelativeTo(null);
-        
-        ArchivoEstudiante e = new ArchivoEstudiante();
-        e.getVotantes();
     }
 }
