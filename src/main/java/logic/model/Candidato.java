@@ -1,4 +1,4 @@
-package model;
+package logic.model;
 
 public class Candidato extends Estudiante {
     private String cargo;
