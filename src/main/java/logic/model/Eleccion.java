@@ -1,4 +1,4 @@
-package model;
+package logic.model;
 
 public class Eleccion {
     private Frente [] frentes = new Frente[20];
