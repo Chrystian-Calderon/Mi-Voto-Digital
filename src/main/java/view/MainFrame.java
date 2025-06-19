@@ -4,17 +4,46 @@
  */
 package view;
 
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Ralfc
  */
-public class Dashboard extends javax.swing.JFrame {
+public class MainFrame extends javax.swing.JFrame {
 
+    int xMouse, yMouse;
+    String router = "dashboard";
+    private JPanel cardPanel;
+    private CardLayout cardLayout;
+    
+    private DashboardPanel dashboard;
+    private VotacionPanel votacion;
+    private FrentesPanel frente;
     /**
      * Creates new form Dashboard
      */
-    public Dashboard() {
+    public MainFrame() {
         initComponents();
+        
+        cardLayout = new CardLayout();
+        cardPanel = new JPanel(cardLayout);
+        
+        dashboard = new DashboardPanel();
+        votacion = new VotacionPanel();
+        frente = new FrentesPanel();
+        
+        cardPanel.add(dashboard, "dashboard");
+        cardPanel.add(votacion, "votacion");
+        cardPanel.add(frente, "frente");
+        
+        btnDashboard.setBackground(new Color(0, 150, 129));
+        btnDashboard.setForeground(Color.WHITE);
+        cardLayout.show(cardPanel, "dashboard");
+        
+        bg.add(cardPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 824, 728));
     }
 
     /**
@@ -26,85 +55,387 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        bg = new javax.swing.JPanel();
+        navbar = new javax.swing.JPanel();
+        lblTitle = new javax.swing.JLabel();
+        btnClose = new javax.swing.JButton();
+        navbarH = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        btnAdministrador = new javax.swing.JButton();
+        btnJurado = new javax.swing.JButton();
+        btnFrente = new javax.swing.JButton();
+        btnDashboard = new javax.swing.JButton();
+        btnEstudiante = new javax.swing.JButton();
+        btnVotacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1024, 768));
+        setResizable(false);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        bg.setBackground(new java.awt.Color(204, 204, 204));
+        bg.setPreferredSize(new java.awt.Dimension(1024, 768));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("jLabel1");
+        navbar.setBackground(new java.awt.Color(255, 255, 255));
+        navbar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                navbarMouseDragged(evt);
+            }
+        });
+        navbar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                navbarMousePressed(evt);
+            }
+        });
+        navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTitle.setBackground(new java.awt.Color(0, 0, 0));
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 0));
+        lblTitle.setText("Mi Voto Digital");
+        navbar.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        btnClose.setBackground(new java.awt.Color(255, 255, 255));
+        btnClose.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnClose.setForeground(new java.awt.Color(0, 0, 0));
+        btnClose.setText("X");
+        btnClose.setBorder(null);
+        btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCloseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCloseMouseExited(evt);
+            }
+        });
+        navbar.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 0, 40, 40));
+
+        bg.add(navbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 40));
+
+        navbarH.setBackground(new java.awt.Color(255, 255, 255));
+        navbarH.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        navbarH.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 10));
+
+        btnAdministrador.setBackground(new java.awt.Color(255, 255, 255));
+        btnAdministrador.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAdministrador.setForeground(new java.awt.Color(0, 0, 0));
+        btnAdministrador.setText("        Administradores");
+        btnAdministrador.setBorder(null);
+        btnAdministrador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAdministrador.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnAdministrador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAdministradorMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAdministradorMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAdministradorMouseExited(evt);
+            }
+        });
+        navbarH.add(btnAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 40));
+
+        btnJurado.setBackground(new java.awt.Color(255, 255, 255));
+        btnJurado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnJurado.setForeground(new java.awt.Color(0, 0, 0));
+        btnJurado.setText("        Jurados");
+        btnJurado.setBorder(null);
+        btnJurado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnJurado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnJurado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnJuradoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnJuradoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnJuradoMouseExited(evt);
+            }
+        });
+        navbarH.add(btnJurado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 180, 40));
+
+        btnFrente.setBackground(new java.awt.Color(255, 255, 255));
+        btnFrente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnFrente.setForeground(new java.awt.Color(0, 0, 0));
+        btnFrente.setText("        Frentes");
+        btnFrente.setBorder(null);
+        btnFrente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFrente.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnFrente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFrenteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnFrenteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnFrenteMouseExited(evt);
+            }
+        });
+        navbarH.add(btnFrente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 180, 40));
+
+        btnDashboard.setBackground(new java.awt.Color(255, 255, 255));
+        btnDashboard.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDashboard.setForeground(new java.awt.Color(0, 0, 0));
+        btnDashboard.setText("        Dashboard");
+        btnDashboard.setBorder(null);
+        btnDashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDashboard.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDashboardMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDashboardMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDashboardMouseExited(evt);
+            }
+        });
+        navbarH.add(btnDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, 40));
+
+        btnEstudiante.setBackground(new java.awt.Color(255, 255, 255));
+        btnEstudiante.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEstudiante.setForeground(new java.awt.Color(0, 0, 0));
+        btnEstudiante.setText("        Estudiantes");
+        btnEstudiante.setBorder(null);
+        btnEstudiante.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEstudiante.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnEstudiante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEstudianteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEstudianteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEstudianteMouseExited(evt);
+            }
+        });
+        navbarH.add(btnEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, 40));
+
+        btnVotacion.setBackground(new java.awt.Color(255, 255, 255));
+        btnVotacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVotacion.setForeground(new java.awt.Color(0, 0, 0));
+        btnVotacion.setText("        Votar");
+        btnVotacion.setBorder(null);
+        btnVotacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVotacion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnVotacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVotacionMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnVotacionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnVotacionMouseExited(evt);
+            }
+        });
+        navbarH.add(btnVotacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 180, 40));
+
+        bg.add(navbarH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 200, 728));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
-                .addComponent(jLabel1)
-                .addGap(0, 177, Short.MAX_VALUE))
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 200, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnCloseMouseClicked
+
+    private void btnCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseEntered
+        btnClose.setBackground(Color.red);
+    }//GEN-LAST:event_btnCloseMouseEntered
+
+    private void btnCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseExited
+        btnClose.setBackground(new Color(204,204,204));
+    }//GEN-LAST:event_btnCloseMouseExited
+
+    private void navbarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navbarMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_navbarMousePressed
+
+    private void navbarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navbarMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_navbarMouseDragged
+
+    private void btnVotacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVotacionMouseClicked
+        btnNeutroColor();
+        cardLayout.show(cardPanel, "votacion");
+        btnVotacion.setBackground(new Color(0, 150, 129));
+        btnVotacion.setForeground(Color.WHITE);
+        router = "votacion";
+    }//GEN-LAST:event_btnVotacionMouseClicked
+
+    private void btnFrenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFrenteMouseClicked
+        btnNeutroColor();
+        cardLayout.show(cardPanel, "frente");
+        btnFrente.setBackground(new Color(0, 150, 129));
+        btnFrente.setForeground(Color.WHITE);
+        router = "frente";
+    }//GEN-LAST:event_btnFrenteMouseClicked
+
+    private void btnDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseClicked
+        btnNeutroColor();
+        cardLayout.show(cardPanel, "dashboard");
+        btnDashboard.setBackground(new Color(0, 150, 129));
+        btnDashboard.setForeground(Color.WHITE);
+        router = "dashboard";
+    }//GEN-LAST:event_btnDashboardMouseClicked
+
+    private void btnJuradoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJuradoMouseClicked
+        btnNeutroColor();
+        cardLayout.show(cardPanel, "jurado");
+        btnJurado.setBackground(new Color(0, 150, 129));
+        btnJurado.setForeground(Color.WHITE);
+        router = "jurado";
+    }//GEN-LAST:event_btnJuradoMouseClicked
+
+    private void btnAdministradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministradorMouseClicked
+        btnNeutroColor();
+        cardLayout.show(cardPanel, "administrador");
+        btnAdministrador.setBackground(new Color(0, 150, 129));
+        btnAdministrador.setForeground(Color.WHITE);
+        router = "administrador";
+    }//GEN-LAST:event_btnAdministradorMouseClicked
+
+    private void btnEstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstudianteMouseClicked
+       btnNeutroColor();
+        cardLayout.show(cardPanel, "estudiante");
+        btnEstudiante.setBackground(new Color(0, 150, 129));
+        btnEstudiante.setForeground(Color.WHITE);
+        router = "estudiante";
+    }//GEN-LAST:event_btnEstudianteMouseClicked
+
+    private void btnAdministradorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministradorMouseEntered
+        btnAdministrador.setBackground(new Color(0, 150, 129));
+        btnAdministrador.setForeground(Color.WHITE);
+    }//GEN-LAST:event_btnAdministradorMouseEntered
+
+    private void btnAdministradorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministradorMouseExited
+        if (router != "administrador") {
+            btnAdministrador.setBackground(Color.WHITE);
+            btnAdministrador.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_btnAdministradorMouseExited
+
+    private void btnJuradoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJuradoMouseEntered
+        btnJurado.setBackground(new Color(0, 150, 129));
+        btnJurado.setForeground(Color.WHITE);
+    }//GEN-LAST:event_btnJuradoMouseEntered
+
+    private void btnJuradoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJuradoMouseExited
+        if (router != "jurado") {
+            btnJurado.setBackground(Color.WHITE);
+            btnJurado.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_btnJuradoMouseExited
+
+    private void btnFrenteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFrenteMouseEntered
+        btnFrente.setBackground(new Color(0, 150, 129));
+        btnFrente.setForeground(Color.WHITE);
+    }//GEN-LAST:event_btnFrenteMouseEntered
+
+    private void btnFrenteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFrenteMouseExited
+        if (router != "frente") {
+            btnFrente.setBackground(Color.WHITE);
+            btnFrente.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_btnFrenteMouseExited
+
+    private void btnDashboardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseEntered
+        btnDashboard.setBackground(new Color(0, 150, 129));
+        btnDashboard.setForeground(Color.WHITE);
+    }//GEN-LAST:event_btnDashboardMouseEntered
+
+    private void btnDashboardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseExited
+        if (router != "dashboard") {
+            btnDashboard.setBackground(Color.WHITE);
+            btnDashboard.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_btnDashboardMouseExited
+
+    private void btnEstudianteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstudianteMouseEntered
+        btnEstudiante.setBackground(new Color(0, 150, 129));
+        btnEstudiante.setForeground(Color.WHITE);
+    }//GEN-LAST:event_btnEstudianteMouseEntered
+
+    private void btnVotacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVotacionMouseEntered
+        btnVotacion.setBackground(new Color(0, 150, 129));
+        btnVotacion.setForeground(Color.WHITE);
+    }//GEN-LAST:event_btnVotacionMouseEntered
+
+    private void btnEstudianteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstudianteMouseExited
+        if (router != "estudiante") {
+            btnEstudiante.setBackground(Color.WHITE);
+            btnEstudiante.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_btnEstudianteMouseExited
+
+    private void btnVotacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVotacionMouseExited
+        if (router != "votacion") {
+            btnVotacion.setBackground(Color.WHITE);
+            btnVotacion.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_btnVotacionMouseExited
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Dashboard().setVisible(true);
-            }
-        });
+    public void btnNeutroColor() {
+        btnAdministrador.setBackground(Color.WHITE);
+        btnAdministrador.setForeground(Color.BLACK);
+        btnDashboard.setBackground(Color.WHITE);
+        btnDashboard.setForeground(Color.BLACK);
+        btnEstudiante.setBackground(Color.WHITE);
+        btnEstudiante.setForeground(Color.BLACK);
+        btnFrente.setBackground(Color.WHITE);
+        btnFrente.setForeground(Color.BLACK);
+        btnJurado.setBackground(Color.WHITE);
+        btnJurado.setForeground(Color.BLACK);
+        btnVotacion.setBackground(Color.WHITE);
+        btnVotacion.setForeground(Color.BLACK);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel bg;
+    private javax.swing.JButton btnAdministrador;
+    private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnDashboard;
+    private javax.swing.JButton btnEstudiante;
+    private javax.swing.JButton btnFrente;
+    private javax.swing.JButton btnJurado;
+    private javax.swing.JButton btnVotacion;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JPanel navbar;
+    private javax.swing.JPanel navbarH;
     // End of variables declaration//GEN-END:variables
 }
