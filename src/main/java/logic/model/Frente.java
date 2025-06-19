@@ -1,4 +1,4 @@
-package model;
+package logic.model;
 
 public class Frente {
     private String nombre,foto;
