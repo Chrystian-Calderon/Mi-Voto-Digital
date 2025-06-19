@@ -14,3 +14,10 @@ Diego,Vargas,4444555,Economia,401214,true,false
 Carla,Gutierrez,5555666,Economia,401215,false,false
 Elena,Rivera,6666777,Derecho,501316,true,false
 Fernando,Castro,7777888,Derecho,501317,false,false
+Juan,Perez,1234567,Informatica,2021001,true,false
+Maria,Lopez,2345678,Industrial,2021002,true,false
+Carlos,Martinez,3456789,Civil,2021003,false,false
+Laura,Gomez,4567890,Medicina,2021004,false,false
+Jose,Rojas,5678901,Informatica,2021005,true,false
+Chrystian Ralf,Calderon Quisbert,12345678,Informatica,100020,true,false
+Dennys,Chavez,23456789,Informatica,100021,true,false
