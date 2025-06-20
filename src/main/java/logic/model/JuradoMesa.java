@@ -1,26 +1,18 @@
 package logic.model;
 
-public class JuradoMesa extends Persona{
-    
-    
-    public String getNombreCompleto() {
-        return super.getNombreCompleto();
+public class JuradoMesa extends Usuario{
+
+    public String getUsuario() {
+        return usuario;
     }
-    public String getCi() { 
-        return super.getCi();
-    }
-    public boolean isActivo() {
-        return super.isActivo();
+    public String getPassword() {
+        return password;
     }
     
-    public void setActivo(boolean x){
-        super.setActivo(x);
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
-    public void setNombreCompleto(String nombreCompleto) {
-        super.setNombreCompleto(nombreCompleto);
+    public void setPassword(String password) {
+        this.password = password;
     }
-    public void setCi(String ci) {
-        super.setCi(ci);
-    }
-    
 }

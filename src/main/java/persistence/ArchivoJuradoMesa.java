@@ -19,8 +19,8 @@ public class ArchivoJuradoMesa {
                 if (datos.length >= 3) {
                     JuradoMesa jurado = new JuradoMesa();
                     jurado.setCi(datos[0].trim());
-                    jurado.setNombreCompleto(datos[1].trim());
-                    jurado.setActivo(Boolean.parseBoolean(datos[2].trim()));
+                    jurado.setNombre(datos[1].trim());
+                    jurado.setMatricula(datos[2].trim());
                     
                     listaJurados.add(jurado);
                 }

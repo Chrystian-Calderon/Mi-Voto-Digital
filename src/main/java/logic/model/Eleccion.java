@@ -1,5 +1,4 @@
 package logic.model;
-
 public class Eleccion {
     private Frente [] frentes = new Frente[20];
     private MesaElectoral [] mesas= new MesaElectoral[100];

@@ -1,5 +1,4 @@
 package logic.model;
-
 public class TEE {
     private MesaElectoral [] mesas = new MesaElectoral[100];
 

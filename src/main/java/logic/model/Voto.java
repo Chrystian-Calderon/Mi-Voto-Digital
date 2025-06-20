@@ -4,6 +4,7 @@ public class Voto {
     private String idVoto;
     private Frente frenteSeleccionado;
     private MesaElectoral mesa;
+    private Estudiante estudiante;
 
     public String getIdVoto() {
         return idVoto;
@@ -15,6 +16,10 @@ public class Voto {
         return mesa;
     }
 
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+    
     public void setIdVoto(String idVoto) {
         this.idVoto = idVoto;
     }
@@ -24,4 +29,9 @@ public class Voto {
     public void setMesa(MesaElectoral mesa) {
         this.mesa = mesa;
     }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
+    }
+    
 }

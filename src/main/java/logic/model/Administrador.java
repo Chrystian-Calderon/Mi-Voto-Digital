@@ -1,10 +1,21 @@
 package logic.model;
-
 import persistence.ArchivoAdministrador;
 
-public class Administrador extends Estudiante {
-    private String usuario = "";
-    private String password = "";
+public class Administrador extends Usuario {
+    public String getUsuario() {
+        return usuario;
+    }
+    public String getPassword() {
+        return password;
+    }
+    
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+      
     
     public boolean iniciarSesion(String usuario, String password) {
         ArchivoAdministrador fileAdmi = new ArchivoAdministrador();

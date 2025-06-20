@@ -25,14 +25,6 @@ public class ArchivoMesaElectoral {
                     jurado.setCi(datos[1]);
                      mesa.setJurado(jurado);
 
-                    String[] idsEstudiantes = datos[2].split(",");
-                    Estudiante[] estudiantes = new Estudiante[idsEstudiantes.length];
-                    for (int i = 0; i < idsEstudiantes.length; i++) {
-                        Estudiante est = new Estudiante();
-                        est.setMatricula(idsEstudiantes[i]);
-                        estudiantes[i] = est;
-                    }
-                    mesa.setEstudaintes(estudiantes);
                     
                     String[] idsVotos = datos[3].split(",");
                     Voto[] votos = new Voto[idsVotos.length];

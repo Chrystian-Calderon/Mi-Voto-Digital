@@ -1,5 +1,4 @@
 package logic.model;
-
 public class Frente {
     private String nombre,foto;
     private Candidato candidatos[]=new Candidato[10];
@@ -27,7 +26,7 @@ public class Frente {
     public void mostrarIntegrantes(){
         int i;
         for(i=0;i<candidatos.length;i++){
-            
+            System.out.println(candidatos[i]);
         }
     }
     public void agregarCandidato(Candidato x){

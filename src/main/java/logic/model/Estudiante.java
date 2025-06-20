@@ -18,20 +18,37 @@ public class Estudiante {
     public String getCI() {
         return ci;
     }
+    public String getCarrera() {
+        return carrera;
+    }
     public String getMatricula(){
         return matricula;
     }
-    
     public boolean isHabilitado() {
         return habilitado;
     }
-    
-    public void setHabilitado(boolean habilitado) {
-        this.habilitado = habilitado;
-    }
-    
     public boolean isHaVotado() {
         return haVotado;
+    }
+
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+    public void setHaVotado(boolean haVotado) {
+        this.haVotado = haVotado;
+    } 
+    public void setCi(String ci) {
+        this.ci = ci;
+    }
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+    public void setHabilitado(boolean habilitado) {
+        this.habilitado = habilitado;
     }
     public void setMatricula (String matricula) {
         this.matricula = matricula;
