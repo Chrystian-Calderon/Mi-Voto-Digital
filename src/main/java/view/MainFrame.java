@@ -19,9 +19,10 @@ public class MainFrame extends javax.swing.JFrame {
     private JPanel cardPanel;
     private CardLayout cardLayout;
     
-    private DashboardPanel dashboard;
-    private VotacionPanel votacion;
-    private FrentesPanel frente;
+    private DashboardPanel dashboardPanel;
+    private JuradoPanel juradoPanel;
+    private VotacionPanel votacionPanel;
+    private FrentesPanel frentePanel;
     /**
      * Creates new form Dashboard
      */
@@ -31,13 +32,15 @@ public class MainFrame extends javax.swing.JFrame {
         cardLayout = new CardLayout();
         cardPanel = new JPanel(cardLayout);
         
-        dashboard = new DashboardPanel();
-        votacion = new VotacionPanel();
-        frente = new FrentesPanel();
+        dashboardPanel = new DashboardPanel();
+        juradoPanel = new JuradoPanel();
+        votacionPanel = new VotacionPanel();
+        frentePanel = new FrentesPanel();
         
-        cardPanel.add(dashboard, "dashboard");
-        cardPanel.add(votacion, "votacion");
-        cardPanel.add(frente, "frente");
+        cardPanel.add(dashboardPanel, "dashboard");
+        cardPanel.add(juradoPanel, "jurado");
+        cardPanel.add(votacionPanel, "votacion");
+        cardPanel.add(frentePanel, "frente");
         
         btnDashboard.setBackground(new Color(0, 150, 129));
         btnDashboard.setForeground(Color.WHITE);
