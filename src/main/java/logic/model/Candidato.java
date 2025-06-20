@@ -9,9 +9,4 @@ public class Candidato extends Estudiante {
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
-
-    public void verDetalle(){
-        System.out.println("Nombre: " + getNombreCompleto());
-        System.out.println("Cargo: " + getCargo());
-    }
 }

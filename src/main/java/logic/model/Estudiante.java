@@ -1,13 +1,23 @@
 package logic.model;
 
+import java.util.ArrayList;
+
 public class Estudiante {
-    private String nombre = "";
-    private String apellidos = "";
-    private String ci = "";
-    private String carrera = "";
-    private String matricula = "";
-    private boolean habilitado = false;
-    private boolean haVotado = false;
+    protected String nombre = "";
+    protected String apellidos = "";
+    protected String ci = "";
+    protected String carrera = "";
+    protected String matricula = "";
+    protected boolean habilitado = false;
+    protected boolean haVotado = false;
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
     
     public String getNombre() {
         return nombre;
@@ -15,10 +25,6 @@ public class Estudiante {
     
     public String getApellidos() {
         return apellidos;
-    }
-    
-    public String getCI() {
-        return ci;
     }
     
     public boolean isHabilitado() {
@@ -32,8 +38,37 @@ public class Estudiante {
     public boolean isHaVotado() {
         return haVotado;
     }
+
+    public String getCi() {
+        return ci;
+    }
+
+    public void setCi(String ci) {
+        this.ci = ci;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
     
-    //public void setHaVotado(MesaElectoral mesa, Frente frente) {
-    //    
-    //}
+    public void setHaVotado(ArrayList<Voto> votos) {
+        for (Voto v : votos) {
+            if (v.estudiante.getMatricula().equals(matricula)) {
+                haVotado = true;
+                break;
+            }
+        }
+    }
 }
