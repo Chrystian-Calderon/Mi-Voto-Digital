@@ -15,7 +15,6 @@ public class ArchivoJurado {
             String linea;
             while ((linea = lector.readLine()) != null) {
                 String[] datos = linea.split(",");
-                System.out.println(linea);
                 JuradoMesa jurado = new JuradoMesa();
                 jurado.setNombre(datos[0]);
                 jurado.setApellidos(datos[1]);

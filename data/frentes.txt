@@ -1,1 +1,32 @@
-
+Frente Alfa,Carlos,Martínez,123456,Ingeniería,2021001,Presidente
+Frente Alfa,Lucía,Gómez,123457,Ingeniería,2021002,Vicepresidente
+Frente Alfa,Marcos,Salazar,123458,Sistemas,2021003,Secretario de Actas
+Frente Alfa,Paola,Ramírez,123459,Industrial,2021004,Secretaria de Propaganda y Prensa
+Frente Alfa,Daniel,Flores,123460,Económicas,2021005,Secretario de Hacienda
+Frente Alfa,Laura,Quispe,123461,Ingeniería,2021006,Vocal
+Frente Alfa,Fernando,Pérez,123462,Ingeniería,2021007,Vocal
+Frente Beta,Ana,Torrez,223456,Sistemas,2022001,Presidente
+Frente Beta,Julio,Aguilar,223457,Industrial,2022002,Vicepresidente
+Frente Beta,Maria,Cabrera,223458,Ingeniería,2022003,Secretaria de Actas
+Frente Beta,Cristian,Mamani,223459,Sistemas,2022004,Secretario de Propaganda y Prensa
+Frente Beta,Elena,Sánchez,223460,Económicas,2022005,Secretaria de Hacienda
+Frente Beta,Bruno,López,223461,Industrial,2022006,Vocal
+Frente Gamma,Oscar,Ruiz,323456,Industrial,2023001,Presidente
+Frente Gamma,Camila,Gutiérrez,323457,Sistemas,2023002,Vicepresidenta
+Frente Gamma,Raul,Valencia,323458,Ingeniería,2023003,Secretario de Actas
+Frente Gamma,Diana,Huanca,323459,Industrial,2023004,Secretaria de Propaganda y Prensa
+Frente Gamma,Esteban,Choque,323460,Económicas,2023005,Secretario de Hacienda
+Frente Gamma,Silvia,Mendoza,323461,Sistemas,2023006,Vocal
+Frente Delta,Andrés,Soria,423456,Sistemas,2024001,Presidente
+Frente Delta,Valeria,Callisaya,423457,Industrial,2024002,Vicepresidenta
+Frente Delta,David,Murillo,423458,Ingeniería,2024003,Secretario de Actas
+Frente Delta,Jimena,Aliaga,423459,Industrial,2024004,Secretaria de Propaganda y Prensa
+Frente Delta,Leonardo,Arias,423460,Económicas,2024005,Secretario de Hacienda
+Frente Delta,Patricia,Rivero,423461,Industrial,2024006,Vocal
+Frente Delta,Gabriel,Suárez,423462,Sistemas,2024007,Vocal
+Frente Omega,Diego,Llanos,523456,Industrial,2025001,Presidente
+Frente Omega,Adriana,Velasco,523457,Sistemas,2025002,Vicepresidenta
+Frente Omega,Roberto,Calle,523458,Ingeniería,2025003,Secretario de Actas
+Frente Omega,Carla,Morales,523459,Sistemas,2025004,Secretaria de Propaganda y Prensa
+Frente Omega,Sergio,Paz,523460,Económicas,2025005,Secretario de Hacienda
+Frente Omega,Melissa,Rojas,523461,Industrial,2025006,Vocal

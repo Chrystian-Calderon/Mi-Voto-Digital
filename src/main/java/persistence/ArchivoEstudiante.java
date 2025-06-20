@@ -15,9 +15,6 @@ public class ArchivoEstudiante {
             String linea;
             while ((linea = lector.readLine()) != null) {
                 String[] datos = linea.split(",");
-                
-                System.out.println(linea);
-                
                 Estudiante estudiante = new Estudiante();
                 estudiante.setHabilitado(Boolean.parseBoolean(datos[5]));
                 lista.add(estudiante);

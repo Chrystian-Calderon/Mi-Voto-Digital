@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Frente {
     private String nombre;
-    public Candidato[] candidatos = new Candidato[10];
+    public ArrayList<Candidato> candidatos = new ArrayList<>();
 
     public String getNombre() {
         return nombre;
@@ -16,9 +16,9 @@ public class Frente {
     }
     
     public void addCandidato(Candidato candidato){
-        for(int i = 0; i < candidatos.length; i++) {
-            if (candidatos[i] == null) {
-                candidatos[i] = candidato;
+        for(int i = 0; i < candidatos.size(); i++) {
+            if (candidatos.get(i) == null) {
+                candidatos.add(candidato);
                 break;
             }
         }
