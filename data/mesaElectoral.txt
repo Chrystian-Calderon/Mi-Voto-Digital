@@ -1,1 +1,5 @@
-
+1,A,B,C,D,Cristina,Morales,987654,Ingeniería,2020001
+2,E,F,G,H,Bruno,Lopez,987655,Sistemas,2020002
+3,I,J,K,L,Laura,Quispe,987656,Industrial,2020003
+4,M,N,O,P,Patricia,Rivero,987657,Ingeniería,2020004
+5,Q,R,S,T,Andres,Soria,987658,Sistemas,2020005

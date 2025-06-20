@@ -4,17 +4,34 @@
  */
 package view;
 
+import java.util.ArrayList;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import logic.FrenteService;
+import logic.model.Frente;
+
 /**
  *
  * @author Ralfc
  */
 public class FrentesPanel extends javax.swing.JPanel {
 
+    private JTable tabla;
+    private DefaultTableModel modeloTable;
     /**
      * Creates new form Frentes
      */
     public FrentesPanel() {
         initComponents();
+        
+        String[] colums = {"Nombre", "Nro integrantes", "Presidente"};
+        modeloTable = new DefaultTableModel(colums, 0);
+        tabla = new JTable(modeloTable);
+        
+        JScrollPane scrollPane = new JScrollPane(tabla);
+        add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 750, 560));
+        cargarDatos();
     }
 
     /**
@@ -27,31 +44,31 @@ public class FrentesPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(102, 153, 0));
+        setBackground(new java.awt.Color(204, 204, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("frentes");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 150, 129));
+        jLabel1.setText("Frentes");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(215, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(149, 149, 149))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jLabel1)
-                .addContainerGap(171, Short.MAX_VALUE))
-        );
+        jButton1.setText("Agregar Frente");
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
+    public void cargarDatos() {
+        FrenteService frenteService = new FrenteService();
+        ArrayList<Frente> data = frenteService.getFrentes();
+        for (Frente f : data) {
+            Object[] fila = { f.getNombre(), f.candidatos.size(), f.candidatos.get(0).getNombre() };
+            modeloTable.addRow(fila);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
