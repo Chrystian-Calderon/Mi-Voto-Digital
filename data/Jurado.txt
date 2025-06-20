@@ -1,0 +1,5 @@
+23456789, Laura Jiménez Vargas, true
+56789123, José Navarro Soto, false
+89123456, Sofía Castro Méndez, true
+43215678, Diego Morales Ríos, false
+76543210, Elena Torres Campos, true

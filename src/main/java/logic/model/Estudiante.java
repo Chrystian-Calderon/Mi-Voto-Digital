@@ -12,13 +12,14 @@ public class Estudiante {
     public String getNombre() {
         return nombre;
     }
-    
     public String getApellidos() {
         return apellidos;
     }
-    
     public String getCI() {
         return ci;
+    }
+    public String getMatricula(){
+        return matricula;
     }
     
     public boolean isHabilitado() {
@@ -32,7 +33,9 @@ public class Estudiante {
     public boolean isHaVotado() {
         return haVotado;
     }
-    
+    public void setMatricula (String matricula) {
+        this.matricula = matricula;
+    }
     //public void setHaVotado(MesaElectoral mesa, Frente frente) {
     //    
     //}

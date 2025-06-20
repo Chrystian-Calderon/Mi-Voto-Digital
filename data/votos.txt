@@ -1,0 +1,3 @@
+V001,FrenteA,Mesa1
+V002,FrenteB,Mesa2
+V003,FrenteC,Mesa3

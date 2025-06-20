@@ -11,7 +11,7 @@ public class Candidato extends Estudiante {
     }
 
     public void verDetalle(){
-        System.out.println("Nombre: " + getNombreCompleto());
+        System.out.println("Nombre: " + getNombre());
         System.out.println("Cargo: " + getCargo());
     }
 }
