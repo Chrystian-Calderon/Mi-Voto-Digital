@@ -1,12 +1,16 @@
 package logic.model;
 
-public class ActaElectoral {
-    private MesaElectoral mesa;
+import java.util.ArrayList;
 
-    public MesaElectoral getMesa() {
-        return mesa;
+public class ActaElectoral {
+    private MesaElectoral mesa = new MesaElectoral(null, null);
+    private Conteo<Frente> conteo;
+
+    public void generarMesa() {
+        
     }
-    public void setMesa(MesaElectoral mesa) {
-        this.mesa = mesa;
+    
+    public void generarResumenGlobal(ArrayList<ActaElectoral> actas) {
+        
     }
 }

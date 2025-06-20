@@ -1,34 +1,41 @@
 package logic.model;
 
+import java.awt.List;
+import java.util.ArrayList;
+
 public class MesaElectoral {
-    private String numeroMesa;
-    private JuradoMesa jurado;
-    private Estudiante []estudaintes = new Estudiante[500];
-    private Voto []votos = new Voto[500];
-
-    public String getNumeroMesa() {
-        return numeroMesa;
-    }
-    public JuradoMesa getJurado() {
-        return jurado;
-    }
-    public Estudiante [] getEstudaintes() {
-        return estudaintes;
-    }
-    public Voto [] getVotos() {
-        return votos;
-    } 
-
-    public void setNumeroMesa(String numeroMesa) {
-        this.numeroMesa = numeroMesa;
-    }
-    public void setJurado(JuradoMesa jurado) {
+    private int numeroMesa;
+    public JuradoMesa jurado;
+    private Voto[] votos = new Voto[500];
+    private ArrayList<Character> iniciales;
+    
+    
+    public MesaElectoral(JuradoMesa jurado, ArrayList<Character> iniciales) {
         this.jurado = jurado;
+        this.iniciales = iniciales;
     }
-    public void setEstudaintes(Estudiante []estudaintes) {
-        this.estudaintes = estudaintes;
+
+    public ArrayList<Estudiante> listarVotantes(ArrayList<Estudiante> estudiantes) {
+        ArrayList<Estudiante> list = new ArrayList<Estudiante>();
+        for(char inicial : iniciales) {
+            for (Estudiante e : estudiantes) {
+                if (e.getApellidos().toUpperCase().charAt(0) == Character.toUpperCase(inicial)) {
+                    list.add(e);
+                }
+            }
+        }
+        return list;
     }
-    public void setVotos(Voto []votos) {
-        this.votos = votos;
+    
+    public void registrarVoto(Voto voto) {
+        
+    }
+    
+    public void mostrarGanadorMesa() {
+        
+    }
+    
+    public Voto getVotosRegistrador() {
+        return null;
     }
 }

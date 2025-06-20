@@ -1,39 +1,44 @@
 package logic.model;
 
+import java.awt.List;
+import java.util.ArrayList;
+
 public class Frente {
-    private String nombre,foto;
-    private Candidato candidatos[]=new Candidato[10];
+    private String nombre;
+    public Candidato[] candidatos = new Candidato[10];
 
     public String getNombre() {
         return nombre;
-    }
-    public String getFoto() {
-        return foto;
-    }
-    public Candidato[] getCandidato() {
-        return candidatos;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-    public void setCandidato(Candidato[] candidato) {
-        this.candidatos = candidato;
-    }
-
-    public void mostrarIntegrantes(){
-        int i;
-        for(i=0;i<candidatos.length;i++){
-            
+    
+    public void addCandidato(Candidato candidato){
+        for(int i = 0; i < candidatos.length; i++) {
+            if (candidatos[i] == null) {
+                candidatos[i] = candidato;
+                break;
+            }
         }
     }
-    public void agregarCandidato(Candidato x){
-        int i;
-        for(i=0;i<candidatos.length;i++){
-
+    
+    public ArrayList<String> toFila() {
+        ArrayList<String> lista = new ArrayList<>();
+        
+        for (Candidato candidato : candidatos) {
+            if (candidato != null) {
+                String fila = nombre + "," +
+                        candidato.getNombre() + "," +
+                        candidato.getApellidos() + "," +
+                        candidato.getCi() + "," +
+                        candidato.getCarrera() + "," +
+                        candidato.getMatricula() + "," +
+                        candidato.getCargo() + ",";
+                lista.add(fila);
+            }
         }
+        return lista;
     }
 }

@@ -1,6 +1,9 @@
 package logic.model;
 
-public class JuradoMesa extends Usuario {
+public class Usuario extends Estudiante {
+    protected String usuario = "";
+    protected String password = "";
+
     public String getUsuario() {
         return usuario;
     }
@@ -15,13 +18,5 @@ public class JuradoMesa extends Usuario {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-    
-    public boolean verificarIdentidadVotante(Estudiante votante) {
-        return false;
-    }
-    
-    public void habilitarVotante(Estudiante votante) {
-        
     }
 }
