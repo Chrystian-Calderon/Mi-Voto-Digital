@@ -1,0 +1,15 @@
+Juan,Perez Lopez,11001101,Informatica,123456,true,false,jperez,jp110011
+Maria,Garcia Ruiz,22002202,Informatica,234567,true,false,mgarcia,mg220022
+Carlos,Martinez Diaz,33003303,Informatica,345678,true,false,cmartinez,cm330033
+Laura,Rodriguez Paz,44004404,Informatica,456789,false,false,lrodriguez,lr440044
+Pedro,Gonzalez Vega,55005505,Informatica,567890,true,false,pgonzalez,pg550055
+Ana,Torres Lima,66006606,Informatica,678901,true,false,atorres,at660066
+Luis,Sanchez Mora,77007707,Informatica,789012,false,false,lsanchez,ls770077
+Sofia,Castro Rios,88008808,Informatica,890123,true,false,scastro,sc880088
+Diego,Flores Luna,99009909,Informatica,901234,true,false,dflores,df990099
+Elena,Vargas Sol,11111111,Informatica,112345,false,false,evargas,ev111111
+Jorge,Mendoza Estrella,22222222,Informatica,223456,true,false,jmendoza,jm222222
+Patricia,Silva Campo,33333333,Informatica,334567,true,false,psilva,ps333333
+Oscar,Ortiz Nunez,44444444,Informatica,445678,false,false,oortiz,oo444444
+Isabel,Herrera Costa,55555555,Informatica,556789,true,false,iherrera,ih555555
+Raul,Medina Prado,66666666,Informatica,667890,true,false,rmedina,rm666666
